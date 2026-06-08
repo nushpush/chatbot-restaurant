@@ -1,0 +1,116 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d13" for="edge" attr.name="level" attr.type="long" />
+  <key id="d12" for="edge" attr.name="human_readable_id" attr.type="long" />
+  <key id="d11" for="edge" attr.name="id" attr.type="string" />
+  <key id="d10" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d9" for="edge" attr.name="description" attr.type="string" />
+  <key id="d8" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d7" for="node" attr.name="id" attr.type="string" />
+  <key id="d6" for="node" attr.name="human_readable_id" attr.type="long" />
+  <key id="d5" for="node" attr.name="degree" attr.type="long" />
+  <key id="d4" for="node" attr.name="level" attr.type="long" />
+  <key id="d3" for="node" attr.name="cluster" attr.type="string" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="API LIST ICA DATABASE">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">API List ICA Database is a system that provides details about food items, including ingredients, nutritional values, allergens, and recipes</data>
+      <data key="d2">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">b45241d70f0e43fca764df95b2b81f77</data>
+    </node>
+    <node id="MUFFIN BURGER">
+      <data key="d0">PRODUCT</data>
+      <data key="d1">Muffin Burger is a food item that can be queried for details such as ingredients, nutritional values, and allergens</data>
+      <data key="d2">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">2</data>
+      <data key="d6">1</data>
+      <data key="d7">4119fd06010c494caa07f439b333f4c5</data>
+    </node>
+    <node id="RECIPE API">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Recipe API is a service that provides recipe details for a given food item ID</data>
+      <data key="d2">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d3">1</data>
+      <data key="d4">0</data>
+      <data key="d5">2</data>
+      <data key="d6">2</data>
+      <data key="d7">d3835bf3dda84ead99deadbeac5d0d7d</data>
+    </node>
+    <node id="FOOD ITEM">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">A general term for any item of food that can be queried using the API List ICA Database</data>
+      <data key="d2">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d3">1</data>
+      <data key="d4">0</data>
+      <data key="d5">2</data>
+      <data key="d6">3</data>
+      <data key="d7">077d2820ae1845bcbb1803379a3d1eae</data>
+    </node>
+    <node id="PRODUCT QUERY API">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d3">0</data>
+      <data key="d4">0</data>
+      <data key="d5">3</data>
+      <data key="d6">4</data>
+      <data key="d7">3671ea0dd4e84c1a9b02c5ab2c8f4bac</data>
+    </node>
+    <edge source="API LIST ICA DATABASE" target="RECIPE API">
+      <data key="d8">1.0</data>
+      <data key="d9">The Recipe API is part of the API List ICA Database and provides recipe details for food items</data>
+      <data key="d10">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d11">19a7f254a5d64566ab5cc15472df02de</data>
+      <data key="d12">0</data>
+      <data key="d13">0</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="MUFFIN BURGER">
+      <data key="d8">1.0</data>
+      <data key="d9">The API List ICA Database can provide details about the Muffin Burger</data>
+      <data key="d10">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d11">e7ffaee9d31d4d3c96e04f911d0a8f9e</data>
+      <data key="d12">1</data>
+      <data key="d13">0</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="PRODUCT QUERY API">
+      <data key="d8">1.0</data>
+      <data key="d9">The Product Query API is part of the API List ICA Database and provides details about food items</data>
+      <data key="d10">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d11">f7e11b0e297a44a896dc67928368f600</data>
+      <data key="d12">2</data>
+      <data key="d13">0</data>
+    </edge>
+    <edge source="MUFFIN BURGER" target="PRODUCT QUERY API">
+      <data key="d8">1.0</data>
+      <data key="d9">The Product Query API can provide details about the Muffin Burger</data>
+      <data key="d10">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d11">1fd3fa8bb5a2408790042ab9573779ee</data>
+      <data key="d12">3</data>
+      <data key="d13">0</data>
+    </edge>
+    <edge source="RECIPE API" target="FOOD ITEM">
+      <data key="d8">1.0</data>
+      <data key="d9">The Recipe API provides recipe details for various food items</data>
+      <data key="d10">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d11">27f9fbe6ad8c4a8b9acee0d3596ed57c</data>
+      <data key="d12">4</data>
+      <data key="d13">0</data>
+    </edge>
+    <edge source="FOOD ITEM" target="PRODUCT QUERY API">
+      <data key="d8">1.0</data>
+      <data key="d9">The Product Query API provides details about various food items</data>
+      <data key="d10">3f53abb82c110b676de2943cc5abe6cb</data>
+      <data key="d11">e1fd0e904a53409aada44442f23a51cb</data>
+      <data key="d12">5</data>
+      <data key="d13">0</data>
+    </edge>
+  </graph>
+</graphml>

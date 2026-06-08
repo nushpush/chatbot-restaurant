@@ -1,0 +1,95 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d5" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d4" for="edge" attr.name="description" attr.type="string" />
+  <key id="d3" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="API LIST ICA DATABASE">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">API List ICA Database provides various APIs for retrieving details about food items, ingredients, recipes, customers, and their orders</data>
+      <data key="d2">69537a3315fd62e6e0487b8e39b9534d</data>
+    </node>
+    <node id="PRODUCT">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Product entity used in APIs to query details about food items, including ingredients, nutritional values, allergens, and recipes</data>
+      <data key="d2">69537a3315fd62e6e0487b8e39b9534d</data>
+    </node>
+    <node id="INGREDIENT">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Ingredient entity used in APIs to query details about specific ingredients, including unit of measurement and storage</data>
+      <data key="d2">69537a3315fd62e6e0487b8e39b9534d</data>
+    </node>
+    <node id="CUSTOMER">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Customer entity used in APIs to query details about customers, including email domain, gender, allergens, and order details</data>
+      <data key="d2">69537a3315fd62e6e0487b8e39b9534d</data>
+    </node>
+    <node id="ORDER">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Order entity used in APIs to query details about customer orders, including order date, bill amount, and customer feedback</data>
+      <data key="d2">69537a3315fd62e6e0487b8e39b9534d</data>
+    </node>
+    <node id="CORN">
+      <data key="d0">INGREDIENT</data>
+      <data key="d1">An ingredient that can be queried for details such as unit of measurement and storage</data>
+      <data key="d2">69537a3315fd62e6e0487b8e39b9534d</data>
+    </node>
+    <node id="CAPGEMINI.COM">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">An email domain used to query customer details based on gender</data>
+      <data key="d2">69537a3315fd62e6e0487b8e39b9534d</data>
+    </node>
+    <node id="669DFA18BFC3E76DE75F44E3">
+      <data key="d0">CUSTOMER</data>
+      <data key="d1">A customer ID used to query order details such as order date, bill amount, and customer feedback</data>
+      <data key="d2">69537a3315fd62e6e0487b8e39b9534d</data>
+    </node>
+    <node id="MUFFIN BURGER">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">69537a3315fd62e6e0487b8e39b9534d</data>
+    </node>
+    <edge source="API LIST ICA DATABASE" target="PRODUCT">
+      <data key="d3">1.0</data>
+      <data key="d4">API List ICA Database provides APIs to query details about products</data>
+      <data key="d5">69537a3315fd62e6e0487b8e39b9534d</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="INGREDIENT">
+      <data key="d3">1.0</data>
+      <data key="d4">API List ICA Database provides APIs to query details about ingredients</data>
+      <data key="d5">69537a3315fd62e6e0487b8e39b9534d</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="CUSTOMER">
+      <data key="d3">1.0</data>
+      <data key="d4">API List ICA Database provides APIs to query details about customers</data>
+      <data key="d5">69537a3315fd62e6e0487b8e39b9534d</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="ORDER">
+      <data key="d3">1.0</data>
+      <data key="d4">API List ICA Database provides APIs to query details about orders</data>
+      <data key="d5">69537a3315fd62e6e0487b8e39b9534d</data>
+    </edge>
+    <edge source="PRODUCT" target="MUFFIN BURGER">
+      <data key="d3">1.0</data>
+      <data key="d4">Muffin Burger is a specific product that can be queried for details</data>
+      <data key="d5">69537a3315fd62e6e0487b8e39b9534d</data>
+    </edge>
+    <edge source="INGREDIENT" target="CORN">
+      <data key="d3">1.0</data>
+      <data key="d4">Corn is a specific ingredient that can be queried for details</data>
+      <data key="d5">69537a3315fd62e6e0487b8e39b9534d</data>
+    </edge>
+    <edge source="CUSTOMER" target="CAPGEMINI.COM">
+      <data key="d3">1.0</data>
+      <data key="d4">Capgemini.com is an email domain used to filter customer queries</data>
+      <data key="d5">69537a3315fd62e6e0487b8e39b9534d</data>
+    </edge>
+    <edge source="ORDER" target="669DFA18BFC3E76DE75F44E3">
+      <data key="d3">1.0</data>
+      <data key="d4">Customer ID 669dfa18bfc3e76de75f44e3 is used to query order details</data>
+      <data key="d5">69537a3315fd62e6e0487b8e39b9534d</data>
+    </edge>
+  </graph>
+</graphml>

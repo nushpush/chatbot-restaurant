@@ -1,0 +1,221 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d5" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d4" for="edge" attr.name="description" attr.type="string" />
+  <key id="d3" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="API LIST ICA DATABASE">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">API List ICA Database is a collection of APIs designed to provide various details about food items, ingredients, customers, and orders</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="PRODUCT">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Product entity in the API List ICA Database, used to query details about food items</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="INGREDIENT">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Ingredient entity in the API List ICA Database, used to query details about ingredients</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="CUSTOMER">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Customer entity in the API List ICA Database, used to query details about customers</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="ORDER">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Order entity in the API List ICA Database, used to query details about customer orders</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="INVENTORY">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Inventory entity in the API List ICA Database, used to query details about products related to a brand
+A collection of products that are available for sale or use, which the API queries</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20,c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="CATEGORY">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Category entity in the API List ICA Database, used to query details about product categories</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="SUPPLIER">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Supplier entity in the API List ICA Database, used to query details about suppliers</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="REVIEW">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Review entity in the API List ICA Database, used to query details about product reviews</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="DISCOUNT">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Discount entity in the API List ICA Database, used to query details about discounts and promotions</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="BRAND">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="API">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">An application programming interface (API) that takes a brand name and returns various details about products related to that brand</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="BRAND NAME">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">A specific name used to identify a product, service, or company</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="PRODUCTS">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Items or services that are related to a specific brand and are returned by the API</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="REGEX">
+      <data key="d0">EVENT</data>
+      <data key="d1">A regular expression used to specify the brand name in the API request</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="POST">
+      <data key="d0">EVENT</data>
+      <data key="d1">The HTTP method used to send data to the API</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="PRICE">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">The cost of a product, which is part of the product details returned by the API</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="DESCRIPTION">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">A brief summary of a product, which is part of the product details returned by the API</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="AVAILABILITY">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">The stock status of a product, indicating whether it is in stock or out of stock</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="NAME">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">The title or designation of a product, which is part of the product details returned by the API</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="PRODUCT DETAILS">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <edge source="API LIST ICA DATABASE" target="PRODUCT">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes APIs that query details about food items under the Product entity</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="INGREDIENT">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes APIs that query details about ingredients under the Ingredient entity</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="CUSTOMER">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes APIs that query details about customers under the Customer entity</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="ORDER">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes APIs that query details about customer orders under the Order entity</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="INVENTORY">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes APIs that query details about products related to a brand under the Inventory entity</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="BRAND">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes APIs that query details about brands under the Brand entity</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="CATEGORY">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes APIs that query details about product categories under the Category entity</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="SUPPLIER">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes APIs that query details about suppliers under the Supplier entity</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="REVIEW">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes APIs that query details about product reviews under the Review entity</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="DISCOUNT">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes APIs that query details about discounts and promotions under the Discount entity</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="INVENTORY" target="API">
+      <data key="d3">1.0</data>
+      <data key="d4">The API queries the inventory to find products related to the brand</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="API" target="BRAND NAME">
+      <data key="d3">1.0</data>
+      <data key="d4">The API takes a brand name as a parameter to return product details</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="API" target="PRODUCTS">
+      <data key="d3">1.0</data>
+      <data key="d4">The API returns details about products related to the specified brand</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="API" target="POST">
+      <data key="d3">1.0</data>
+      <data key="d4">The API uses the POST method to receive data</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="BRAND NAME" target="PRODUCTS">
+      <data key="d3">1.0</data>
+      <data key="d4">Products are related to a specific brand name</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="BRAND NAME" target="REGEX">
+      <data key="d3">1.0</data>
+      <data key="d4">The brand name is specified using a regular expression in the API request</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="PRODUCTS" target="PRODUCT DETAILS">
+      <data key="d3">1.0</data>
+      <data key="d4">Product details provide specific information about products</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="PRICE" target="PRODUCT DETAILS">
+      <data key="d3">1.0</data>
+      <data key="d4">Price is a component of product details</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="DESCRIPTION" target="PRODUCT DETAILS">
+      <data key="d3">1.0</data>
+      <data key="d4">Description is a component of product details</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="AVAILABILITY" target="PRODUCT DETAILS">
+      <data key="d3">1.0</data>
+      <data key="d4">Availability is a component of product details</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="NAME" target="PRODUCT DETAILS">
+      <data key="d3">1.0</data>
+      <data key="d4">Name is a component of product details</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+  </graph>
+</graphml>

@@ -1,0 +1,191 @@
+.sidebar {
+    position: absolute;
+    left: -300px;
+    top: 0px;
+    bottom: 0;
+    width: 300px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    background: #f3f5fc;
+    transition: left 0.3s ease;
+    box-shadow: 5px 0 34px 0 rgba(219, 219, 219, 0.25);
+    background-color: #fff;
+  }
+
+  .sidebar.open {
+    left: 0; /* Slide in when open */
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    font-weight: bold;
+    border-bottom: 2px solid #efefef;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .close-sidebar {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px; /* Add some padding to the content */
+    box-sizing: border-box; /* Ensure the padding is included in the element's total width and height */
+  }
+  .sidebar-title{
+    font-family: Ubuntu,sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.57px;
+    text-align: left;
+    color: #333;
+    position: relative;
+    left: -143px;
+  }
+  .right-arrow{
+    cursor: pointer;
+    width: 20.3px;
+    height: 19.3px;
+  }
+  .history-content{
+    font-family: Ubuntu,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.41;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(51, 51, 51, 0.99);
+    cursor: pointer;
+  }
+  .history-content-2{
+    font-family: Ubuntu,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.41;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(51, 51, 51, 0.99);
+    margin-top: 10px;
+  }
+  .date{
+    flex-grow: 0;
+    font-family: Ubuntu,sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #565656;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .new-chat{
+    width: 20px;
+    float: left;
+    position: relative;
+    margin-left: 122px;
+    left: 98px;
+    cursor: pointer;
+  }
+  .new-chat.disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+  .date-group {
+    margin-bottom: 20px;
+  }
+
+
+
+  .history-content:hover {
+    background-color:  rgba(187, 187, 187, 0.16);;
+  }
+
+  .history-content.clicked {
+    background-color: #dcdcdc;
+  }
+  .history-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .three-dot-container {
+    position: relative;
+  }
+
+  .three-dot-icon {
+    visibility: hidden;
+    cursor: pointer;
+    width: 21px;
+    position: relative;
+    height: 20px;
+    float: right;
+    right: 10px;
+    top: 2px;
+  }
+
+  .history-content:hover .three-dot-icon,
+  .history-content.clicked .three-dot-icon {
+    visibility: visible;
+  }
+
+  .delete-option {
+    position: absolute;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    color: red;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 10px;
+    height: 34px;
+    font-size: 15px;
+    width: 87px;
+  }
+
+  .delete-option:hover {
+    background-color: rgba(50, 50, 50, 0.2); /* Darker hover color for delete option */
+  }
+
+  .delete-icon{
+    width: 17px;
+  }
+
+.delete-text{
+  position: relative;
+  top:2px;
+}
+
+  .history-content:hover .three-dot-icon,
+  .history-content.clicked .three-dot-icon {
+    visibility: visible;
+  }

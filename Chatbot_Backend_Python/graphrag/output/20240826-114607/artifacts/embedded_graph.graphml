@@ -1,0 +1,130 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d5" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d4" for="edge" attr.name="description" attr.type="string" />
+  <key id="d3" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="API LIST ICA DATABASE">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">API List ICA Database is a collection of APIs designed to provide various details about food items, ingredients, customers, and orders</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="PRODUCT">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Product entity in the API List ICA Database, used to query details about food items, their recipes, and ingredients</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="INGREDIENT">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Ingredient entity in the API List ICA Database, used to query details about specific ingredients</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="CUSTOMER">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Customer entity in the API List ICA Database, used to query details about customers, their allergens, and order history</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="ORDER">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Order entity in the API List ICA Database, used to query details about customer orders</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="INVENTORY">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">INVENTORY is a part of the API URL used to query product details. It is an entity in the API List ICA Database, specifically utilized to query details about products related to a specific brand.</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20,c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="ALLERGEN">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Allergen entity in the API List ICA Database, used to query details about allergens that customers are allergic to</data>
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="RECIPE">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </node>
+    <node id="DC PON AZURE ENTITY API03">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">DC PON AZURE ENTITY API03 is the host of the API URL</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="BRAND">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">A brand name specified in the regex field of the API request</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="MATRIX">
+      <data key="d0">ORGANIZATION</data>
+      <data key="d1">Matrix is the brand name used in the regex field of the API request)Relationships:("relationship"</data>
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <node id="API">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </node>
+    <edge source="API LIST ICA DATABASE" target="PRODUCT">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes the Product entity to query details about food items</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="INGREDIENT">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes the Ingredient entity to query details about specific ingredients</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="CUSTOMER">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes the Customer entity to query details about customers</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="ORDER">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes the Order entity to query details about customer orders</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="API LIST ICA DATABASE" target="INVENTORY">
+      <data key="d3">1.0</data>
+      <data key="d4">The API List ICA Database includes the Inventory entity to query details about products related to a specific brand</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="PRODUCT" target="INGREDIENT">
+      <data key="d3">1.0</data>
+      <data key="d4">The Product entity can be used to query details about ingredients associated with a food item</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="PRODUCT" target="RECIPE">
+      <data key="d3">1.0</data>
+      <data key="d4">The Product entity can be used to query details about recipes associated with a food item</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="CUSTOMER" target="ORDER">
+      <data key="d3">1.0</data>
+      <data key="d4">The Customer entity can be used to query details about customer orders</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="CUSTOMER" target="ALLERGEN">
+      <data key="d3">1.0</data>
+      <data key="d4">The Customer entity can be used to query details about allergens that customers are allergic to</data>
+      <data key="d5">c7e00c6a54b81fe33fb8626ede16629e</data>
+    </edge>
+    <edge source="DC PON AZURE ENTITY API03" target="API">
+      <data key="d3">1.0</data>
+      <data key="d4">The API is hosted on DC PON AZURE ENTITY API03</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="BRAND" target="API">
+      <data key="d3">1.0</data>
+      <data key="d4">The API takes a brand name as a parameter</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+    <edge source="BRAND" target="MATRIX">
+      <data key="d3">1.0</data>
+      <data key="d4">Matrix is an example of a brand name used in the API</data>
+      <data key="d5">3aba43df2ad0c03781e71b4cce5b9e20</data>
+    </edge>
+  </graph>
+</graphml>

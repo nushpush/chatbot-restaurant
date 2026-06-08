@@ -1,0 +1,102 @@
+.custom-modal .modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 151px;
+
+}
+
+.delete-btn{
+  border-radius: 8px;
+  background-color: #f85f6a;;
+}
+/* styles.css */
+
+.cancel-btn {
+background-color: #bfbfbf;
+color: #333;
+border: none;
+padding: 10px 20px; 
+border-radius: 5px; 
+cursor: pointer; 
+}
+
+.cancel-btn:hover {
+background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+.delete-btn {
+background-color: #ff4d4d; /* Red background */
+color: white; /* White text */
+border: none; /* Remove border */
+padding: 10px 20px; /* Add some padding */
+border-radius: 5px; /* Round the corners */
+cursor: pointer; /* Pointer cursor on hover */
+}
+
+.delete-btn:hover {
+background-color: #cc0000; /* Darker red on hover */
+}
+/* Ensure your CSS selectors are specific enough */
+.modal-footer .cancel-btn {
+  background-color: #bfbfbf;
+  /* color: #fff; */
+  border: 1px solid rgb(0, 0, 0);
+    background-color: #fff;
+    color:rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 22px;
+  cursor: pointer;
+  position: relative;
+  right: 10px;
+}
+
+.modal-footer .cancel-btn:hover {
+  background-color: #e0e0e0; 
+  color:rgb(0,0,0);
+  border:1px solid rgb(0,0,0);
+}
+
+
+.modal-footer .delete-btn {
+ background-color: #ff4d4d;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 22px;
+cursor: pointer;
+position: relative;    
+right: 10px;
+
+}
+
+.modal-footer .delete-btn:hover {
+  background-color: #cc0000; /* Darker red on hover */
+}
+.custom-modal .modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 151px;
+  background-color: #f0f0f0; /* Light grey background */
+  color: #333; /* Darker text color for better contrast */
+  border-radius: 8px; /* Optional: rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+
+}
+
+.custom-modal .modal-content {
+  background-color: #f0f0f0; /* Ensure the modal content matches the dialog */
+  color: #333; /* Ensure the text color matches */
+}
+
+.custom-modal .modal-header,
+.custom-modal .modal-body,
+.custom-modal .modal-footer {
+  background-color: #f0f0f0; /* Ensure all parts of the modal have the same background color */
+  color: #333; /* Ensure the text color is consistent */
+}
+.custom-modal .modal-tile{
+font-size: 20px;
+font-family: Ubuntu,sans-serif;
+}

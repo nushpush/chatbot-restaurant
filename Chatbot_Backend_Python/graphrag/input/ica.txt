@@ -1,0 +1,411 @@
+API 1  - https://dcponazure-entity-api03.azurewebsites.net/api/v1/entities/PRODUCT/query/"
+This API retrieves food item, price, weather, nutritional facts, food type, available for delivery, item type, availability of this item in shop, allergy information, recommending what time of the day you can have this food, during which weather condition food can be consumed, dietary selection.
+
+If the prompt includes numeric or decimal data, use payLoad 2 else use payLoad 1.If the prompt contains "not greater than / not exceeding" then maxBound value should be taken as X+0.01.
+When the prompt mentions multiple columns, you need to create a separate entry for each column in the payload. For each entry, include the appropriate field based on whether the prompt contains numeric or non-numeric data.
+
+If the prompt contains 'not greater than / not exceeding,' then the maxBound value should be taken as X + 0.01. Additionally, if the user requests an exact number, the value should also be taken as X + 0.01.
+
+"payLoad 1": {
+"pageNumber": 0,
+"fields": [
+{
+    "name": "[Read from “Column name” column in below tables]",
+    "match": {
+    "regex": "[Take from prompt]",
+    "ignoreCase": true”
+}
+}
+]
+}
+
+
+"payLoad 2": {
+"pageNumber": 0,
+"fields": [
+{
+    "name": "[Read from “Column name” column in below tables]",
+ "range": { 
+        "minBound":[Take input from prompt] ,       
+        "maxBound": [Take input from prompt]   
+        }
+}
+]
+}
+
+Column List Table
+
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| Column Name                           | Column Description                                                    | Acceptable Inputs                          |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| name                                  | This column contains product names                                    | A food item name                           | 
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| description                           | This column contains product ingredients                              | A food ingredient
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| dietary_selection                     | This column contains details about vegetarian and non-vegetarian      | vegetarian, non-vegetarian                 |
+|                                       | food items                                                            |                                            |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| recommendations.time_of_day           | This column contains details about what time of the day               | Morning, Afternoon, Evening                |
+|                                       | this product can be eaten                                             | (recommendations for that day)             |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| recommendations.weather               | This column contains details about in which climate                   | H – Hot and C - Cold                       |
+|                                       | this product can be eaten                                             |                                            |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| allergens.has_soy                     | This column contains details if the given products contain soy        | TRUE – contains Soy                        |
+|                                       |                                                                       | FALSE – does not contain SOY               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| allergens.has_nuts                    | This column contains details if the given products contain nuts       | TRUE – contains Nuts                       |
+|                                       |                                                                       | FALSE – does not contain Nuts              |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| allergens.has_milk                    | This column contains details if the given products contain milk       | TRUE – contains milk                       |
+|                                       |                                                                       | FALSE – does not contain milk              |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| allergens.has_eggs                    | This column contains details if the given products contain eggs       | TRUE – contains eggs                       |
+|                                       |                                                                       | FALSE – does not contain eggs              |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| allergens.has_gluten                  | This column contains details if the given products contain gluten     | TRUE – contains gluten                     |
+|                                       |                                                                       | FALSE – does not contain gluten            |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| itemtype                              | This column contains the type of meal this product is typically       | BreakFast, LunchDinner, Evening Snacks     |
+|                                       | consumed                                                              |                                            |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.total_calories_cal  | This column contains the total nutritional facts calories             | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.total_carbs_g       | This column contains the total nutritional carbs                      | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.protein_g           | This column contains the total nutritional protein                    | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.calories_from_fat_cal| This column contains the total nutritional fat calories              | it contains the numeric data              |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.saturated_fat_g     | This column contains the total nutritional saturated fat              | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.trans_fat_g         | This column contains the total trans fat                              | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.cholesterol_mg      | This column contains the total nutritional cholesterol                | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.sodium_mg           | This column contains the total nutritional sodium                     | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.dietary_fiber_g     | This column contains the total nutritional fiber                      | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.sugars_g            | This column contains the total nutritional sugar                      | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.vitamin_a_iu        | This column contains the vitamin A content                            | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.vitamin_c_mg        | This column contains the vitamin C content                            | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.calcium_mg          | This column contains the total nutritional calcium                    | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+| nutritional_facts.iron                | This column contains the total nutritional iron                       | it contains the numeric data               |
++---------------------------------------+-----------------------------------------------------------------------+--------------------------------------------+
+
+Steps to Create Payload:
+1.Find those columns from the Column List table.
+2.Modify the template payload with the relevant column names.
+3.Add the regex value if the prompt contains specific keywords.
+4.If the prompt includes numeric or decimal data, use payLoad 2 else use payLoad 1.
+6.Hit the API with the constructed payload.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API 2 - https://dcponazure-entity-api03.azurewebsites.net/api/v1/entities/PRODUCT/{entityId}/features/query/
+Product Description - This API gets the recipe for a product using its Product id.
+
+Replace "entityId" in the URL with the id to get the recipe for that specific product.
+
+Steps to fetch entityId:
+1) Call API 1 to get details about the product mentioned by the user.
+2) Find the id in the response. This id is called the entityId.
+3) Include this entityId in the URL for the next steps.
+
+"payLoad": {
+{
+  "typeCodes": [
+    "RECIPE"
+  ]
+}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+API 3 -  https://dcponazure-entity-api03.azurewebsites.net/api/v1/entities/INGREDIENT/query/
+Product Description - This API provides information about the specific ingredients used in any products that are served. The details only include: units of measurement, ingredient lifecycle and storage. This API will not provide the list of ingredient based on specific product.
+
+To get information about ingredients by name, a regex is used for the search. 
+
+The request body for this API is below: This is a sample API template given, but if we need filtering on other columns or users asks for multiple options in prompt then we need to pick from the list of column names in the below Column List table and  then we need to add multiple json payloads for each column and modify this payload. Regex values are usually the proper nouns or user asking for specific ingredients.
+
+1) If the prompt includes numeric or decimal data, use payLoad 2 else use payLoad 1. If the prompt contains "not greater than / not exceeding" then maxBound value should be taken as X+0.01.
+2) When the prompt mentions multiple columns, you need to create a separate entry for each column in the payload. For each entry, include the appropriate field based on whether the prompt contains numeric or non-numeric data.
+3) If the prompt includes numeric or decimal data, use payLoad 2 else use payLoad 1. If the prompt contains exact number then maxBound value should be taken as X+0.01 and minBound value should be taken as X-0.01.
+
+"payLoad": {
+"pageNumber": 0,
+"fields": [
+{
+    "name": "[Read from “Column name” column in below tables]",
+    "match": {
+    "regex": "[Take from prompt]",
+    "ignoreCase": true”
+}
+}
+]
+}
+
+"payLoad 2": {
+"fields": [
+{
+    "name": "[Read from “Column name” column in below tables]",
+    "range": { 
+        "minBound":[Take input from prompt] ,       
+        "maxBound":[Take input from prompt]   
+        }
+}
+]
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Column Name         | Column Description                                                        | Acceptable Inputs
+--------------------------------------------------------------------------------------------------------------------------------------------------
+name                | This column lists the name of the ingredients.                            | Ingredient Name
+unit_of_measurement | This column specifies the units used to measure the ingredients           | mL-millilitre, gm-gram, tsp-teaspoon, tbsp-tablespoon          
+ingredient_lifecycle| This column indicates the lifespan of the product                         | Number of days              
+storage             | This column describes the recommended storage conditions for the product  | Room temperature, Cold, Dry, Cool and dry, Hot                
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Steps to create payload:
+1. Decide how many columns you want to search from the prompt.
+2. Locate those columns in the Column List table.
+3. Update the template payload with the names of the columns you want to search.
+4. Include the regex value or minBound and maxBound value, which is usually what the user is looking for.
+5. Send the API request with the payload.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+API 4 - https://dcponazure-entity-api03.azurewebsites.net/api/v1/entities/PRODUCT/{entityId}/associations/query/
+Product Description - This API gives detailed information about the ingredients in a specific product when you provide the Product ID. It includes comprehensive data on each ingredient, such as how they are measured - unit of measurement, their lifecycle - ingredient lifecycle, and storage instructions - storage. This API provides a detailed information about each and every ingredient used in the product.
+
+Replace "entityId" in the URL with the id to get the ingredients for that specific product.
+
+Steps to fetch entityId:
+1) Call API 1 to get details about the product mentioned by the user.
+2) Find the id in the response. This id is called the entityId.
+3) Include this entityId in the URL for the next steps.
+
+"payLoad": {
+{
+  "typeCodes": [
+    "PRODUCT_INGREDIENT"
+  ],
+  "retrieveOtherEntities": true
+}
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API 5 -  https://dcponazure-entity-api03.azurewebsites.net/api/v1/entities/CUSTOMER/query/
+Product Description - This API offers details about the customer, such as name, email, phone, dob, gender, country, city, occupation, dietary requirements and loyalty status.
+
+To get information about customer, a regex is used for the search. 
+
+The request body for this API is below: This is a sample API template given, but if we need filtering on other columns or users asks for multiple options in prompt then we need to pick from the list of column names in the below Column List table and  then we need to add multiple json payloads for each column and modify this payload. Regex values are usually the proper nouns or user asking for specific details of a customer.
+
+1) If the prompt includes numeric or decimal data, use payLoad 2 else use payLoad 1. If the prompt contains "not greater than / not exceeding" then maxBound value should be taken as X+0.01.
+2) When the prompt mentions multiple columns, you need to create a separate entry for each column in the payload. For each entry, include the appropriate field based on whether the prompt contains numeric or non-numeric data.3) If the prompt includes numeric or decimal data, use payLoad 2 else use payLoad 1.If the prompt contains exact number then m
+3) If the prompt includes numeric or decimal data, use payLoad 2 else use payLoad 1. If the prompt contains exact number then maxBound value should be taken as X+0.01 and minBound value should be taken as X-0.01.
+
+"payLoad 1": {
+  "fields": [
+    {
+      "name": "[Read from “Column name” column in below tables]",
+      "match": {
+        "regex": "[Take from Prompt]",
+        "ignoreCase": true
+}
+}
+]
+}
+
+"payLoad 2": {
+"fields": [
+{
+    "name": "[Read from “Column name” column in below tables]",
+    "range": { 
+        "minBound":[Take input from prompt] ,       
+        "maxBound":[Take input from prompt]   
+        }
+}
+]
+}
+--------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------
+Column Name         | Column Description                                                        | Acceptable Inputs
+--------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------
+name                | This column contains the name of the customer.                            | Name
+email               | This column contains the email address of the customer.                   | email Id              
+phone               | This column contains the phone number of the customer.                    | Number              
+dob                 | This column specifies the date of birth of the customer.                  | Date of Birth of Customer - Calendar              
+gender              | This column indicates the gender of the customer.                         | M - Male or F - Female
+country             | This column lists the country of residence of the customer.               | Country Name              
+city                | This column specifies the city of residence of the customer.              | City Name              
+occupation          | This column contains the job title or profession of the customer.         | Consultant, Associate Consultant, Engineer, Manager, Senior Manager             
+dietary_requirement | This column describes any dietary restrictions or needs of the customer.  | Non-Veg - Non Vegeterian, Veg - Vegeterian, Vegan, Egg           
+loyalty_status      | This column indicates the loyalty program status of the customer.         | Member, Non-Member, Prime Member
+--------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------
+
+
+Steps to create payload:
+1. Decide how many columns you want to search from the prompt.
+2. Locate those columns in the Column List table.
+3. Update the template payload with the names of the columns you want to search.
+4. Include the regex value or maxBound and minBound value, which is usually what the user is looking for.
+5. Send the API request with the payload.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API 6 - - https://dcponazure-entity-api03.azurewebsites.net/api/v1/entities/CUSTOMER/{entityId}/features/query/
+Product Description - This API retrieves allergen details of a customer based on their customer id.
+
+Replace "entityId" in the URL with the id to get the information about the allergens.
+
+Steps to fetch entityId:
+1) Call API 5 to get details about the customer mentioned by the user.
+2) Find the id in the response. This id is called the entityId.
+3) Include this entityId in the URL for the next steps.
+
+"payLoad": {
+{
+  "typeCodes": [
+    "ALLERGEN"
+  ]
+}
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API 7 -  https://dcponazure-entity-api03.azurewebsites.net/api/v1/entities/ORDER/query/
+Product Description - This API fetches the order details for a customer. It includes information like the customer id, bill amount, order date, and customer feedback.
+
+To get information about order, a regex is used for the search. 
+To obtain customer order details, you must provide the customer_id rather than the customer's name.
+
+Steps to fetch customer_id:
+1) Call API 5 to get details about the customer mentioned by the user.
+2) Find the id in the response. This id is called the customer_id.
+3) Include this customer_id in the regex for the next steps.
+
+The request body for this API is below: This is a sample API template given, but if we need filtering on other columns or users asks for multiple options in prompt then we need to pick from the list of column names in the below Column List table and  then we need to add multiple json payloads for each column and modify this payload. Regex values are usually the proper nouns or user asking for specific details of a customer.
+
+1) If the prompt includes numeric or decimal data, use payLoad 2 else use payLoad 1. If the prompt contains "not greater than / not exceeding" then maxBound value should be taken as X+0.01.
+2) When the prompt mentions multiple columns, you need to create a separate entry for each column in the payload. For each entry, include the appropriate field based on whether the prompt contains numeric or non-numeric data.3) If the prompt includes numeric or decimal data, use payLoad 2 else use payLoad 1.If the prompt contains exact number then m
+3) If the prompt includes numeric or decimal data, use payLoad 2 else use payLoad 1. If the prompt contains exact number then maxBound value should be taken as X+0.01 and minBound value should be taken as X-0.01.
+
+"payLoad 1": {
+  "fields": [
+    {
+      "name": "[Read from “Column name” column in below tables]",
+      "match": {
+        "regex": "[Take from Prompt]",
+      }
+    }
+  ]
+}
+
+"payLoad 2": {
+"fields": [
+{
+    "name": "[Read from “Column name” column in below tables]",
+    "range": { 
+        "minBound":[Take input from prompt] ,       
+        "maxBound":[Take input from prompt]   
+        }
+}
+]
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Column Name         | Column Description                                         | Acceptable Inputs
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+customer_id         | This column contains the unique identifier for a customer. | Customer ID number
+bill_amount         | This column shows the total amount paid by the customer.   | Amount paid by customer for the order
+order_date          | This column indicates the date when the order was placed.  | Date - Calendar Format - (yyyy-mm-dd)
+customer_feedback   | This column contains feedback provided by the customer.    | Feedbacks
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Steps to create payload:
+1. Decide how many columns you want to search from the prompt.
+2. Locate those columns in the Column List table.
+3. Update the template payload with the names of the columns you want to search.
+4. Include the regex value or maxBound and minBound value, which is usually what the user is looking for.
+5. Send the API request with the payload.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API 8 - https://dcponazure-entity-api03.azurewebsites.net/api/v1/entities/ORDER/{entityId}/associations/query/
+Product Description - This API fetches the order history of a customer using their order_id and customer_id.
+
+Steps to fetch customer_id:
+1) Call API 5 to get details about the customer mentioned by the user.
+2) Find the id in the response. This id is called the customer_id.
+3) Include this customer_id in the regex for the next steps.
+
+Steps to fetch order_id of that customer_id:
+1) Call API 7 to get the details about the order for the specified customer_id, who has requested information about their order.
+2) Find the id in the response. This id is called the order_id.
+3) Include this order_id in the URL to get the order details of the specific order_id.
+
+"payLoad": {
+{
+  "fields": [
+    {
+      "name": "[Read from “Column name” column in below tables]",
+    }
+  ],
+  "typeCodes": [
+    "ORDER_HISTORY"
+  ],
+  "retrieveOtherEntities": true
+}
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+API 9 - https://dcponazure-entity-api03.azurewebsites.net/api/v1/entities/INVENTORY/query/
+Product Description - This API offers details about the inventory, such as name, description, quantity, unit of measurement, category, brand, current stock level, reorder quantity, inventory product lifecycle and storage
+
+To get information about inventory, a regex is used for the search.
+
+The request body for this API is below: This is a sample API template given, but if we need filtering on other columns or users asks for multiple options in prompt then we need to pick from the list of column names in the below Column List table and  then we need to add multiple json payloads for each column and modify this payload. Regex values are usually the proper nouns or user asking for specific details of a customer.
+
+"payLoad 1": {
+{
+  "fields": [
+    {
+      "name": "[Read from “Column name” column in below tables]",
+      "match": {
+        "regex": "[Take from Prompt]",
+        "ignoreCase": true
+      }
+    }
+  ]
+}
+}
+
+"payLoad 2": {
+"fields": [
+{
+    "name": "[Read from “Column name” column in below tables]",
+    "range": { 
+        "minBound":[Take input from prompt] ,       
+        "maxBound":[Take input from prompt]   
+        }
+}
+]
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Column Name                 | Column Description                                                        		     			 | Acceptable Inputs
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+name                        | This column lists the name of the ingredients.                            		      			 | Ingredient Name
+description                 | This column provides details about the ingredient, including its characteristics or intended use.	 |                                                                        
+unit_of_measurement         | This column specifies the units used to measure the ingredients           		      			 | kg - Kilogram and L - Litre          
+category                    | This column categorizes the ingredient based on its type or usage.             		       		 | Ingredient Description
+brand                       | This column lists the brand name of the ingredient.                          		       			 | Brand Name
+current_stock_level         | This column shows the current quantity of the ingredient available in stock.  		       		 | Number
+reorder_quantity            |  This column indicates the quantity of the ingredient that should be reordered when stock is low.  | Number
+inventory_product_lifecycle | This column indicates the lifespan of the product                         		       			 | Number of days             
+storage                     | This column describes the recommended storage conditions for the product  		                 | Cold, Dry, Cool and dry         
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Steps to create payload:
+1. Decide how many columns you want to search from the prompt.
+2. Locate those columns in the Column List table.
+3. Update the template payload with the names of the columns you want to search.
+4. Include the regex value or maxBound and minBound value, which is usually what the user is looking for.
+5. Send the API request with the payload.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------

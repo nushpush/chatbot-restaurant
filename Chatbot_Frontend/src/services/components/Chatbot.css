@@ -1,0 +1,929 @@
+.message-icon {
+  border-radius: 50%;
+  position: relative;
+  bottom: 65px;
+  float: right;
+  right: 64px;
+  cursor: pointer;
+  width: 68px;
+  height: 68px;
+  flex-grow: 0;
+  padding: 14.7px 16.7px 15.7px 16px;
+  box-shadow: 0 4px 4px -1px rgba(145, 145, 145, 0.82);
+  background-color: #128add;
+  display: flex;
+
+}
+
+
+.popup-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 417px;
+  height: 415px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.popup-container.maximized {
+  width: 90%;
+  height: 80%;
+  right: 5%;
+  bottom: 5%;
+}
+
+.header {
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
+  padding: 23px 12px 22px 18px;
+  background-color: #118add;
+}
+
+.header-buttons {
+  display: flex;
+}
+
+.toggle-button,
+.toggle-maximize {
+  background-color: #118add;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+
+}
+
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.message-list.with-sidebar {
+  flex: 1 1;
+  overflow-y: auto;
+  padding: 10px;
+  /* display: flex; */
+  flex-direction: column;
+  left: 306px;
+  position: relative;
+  width: 73%;
+  padding-top: 14px;
+  margin-top: 0px;
+}
+
+.message {
+  margin: 5px 0px;
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  display: flex;
+  align-items: flex-start;
+  /* position: relative; */
+}
+
+.message-content {
+  flex: 1;
+  /* display: flex;
+  flex-direction: column; */
+  position: relative;
+}
+
+.message-text-wrapper {
+  /* Ensure the text and read-more are inline */
+  position: relative;
+  /* Needed for positioning the read-more */
+}
+
+.message-text {
+  display: inline;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.read-more {
+  cursor: pointer;
+  color: #929292;
+  font-size: 12px;
+  /* position: absolute; */
+  right: 0;
+  bottom: 0px;
+  white-space: nowrap;
+  margin-left: 10px;
+  display: block;
+  position: relative;
+  text-align: end;
+}
+
+.user {
+  margin-left: auto;
+  /* margin-top: 10px; */
+  margin-top: 27px;
+  margin-bottom: 19px;
+  width: auto;
+  /* Allow the width to adjust based on content */
+  max-width: 70%;
+  /* Set a maximum width relative to its container */
+  min-width: 258px;
+  /* Set a minimum width for smaller screens */
+  height: auto;
+  /* Allow the height to adjust based on content */
+  flex-grow: 0;
+  padding: 12px 16px 16px 18px;
+  border-radius: 8px;
+  background-color: #ccdffe;
+  color: #333;
+  font-family: Ubuntu, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  text-align: left;
+  word-wrap: break-word;
+  /* Ensure long words break to fit the box */
+  overflow-wrap: break-word;
+  /* For compatibility with older browsers */
+  word-break: break-word;
+
+}
+
+.bot {
+  width: auto;
+  max-width: 70%;
+  min-width: 258px;
+  height: auto;
+  flex-grow: 0;
+  margin: -9px 0 0;
+  padding: 16px 52px -1px 18px;
+  border-radius: 8px;
+  background-color: #f3f4f8;
+  color: #333;
+  margin-left: 4px;
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.54px;
+  text-align: left;
+}
+
+.bot-message-text {
+  align-self: flex-start;
+  margin: 4px 0;
+  width: auto;
+  max-width: 70%;
+  /* Set a maximum width */
+  border-radius: 8px;
+  color: #333;
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0.54px;
+  text-align: left;
+}
+
+.message-content .edit-textarea {
+  width: calc(100% - 20px);
+  /* padding: 12px 16px 16px 18px; */
+  border-radius: 8px;
+  background-color: #ccdffe;
+  color: #333;
+  font-family: Ubuntu, sans-serif;
+  font-size: 15px;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 10px 0;
+  outline: none;
+  border: none;
+  resize: none;
+  margin-top: 1px;
+}
+
+.user-message-text {
+  margin: 4px 0;
+  width: auto;
+  max-width: 70%;
+  border-radius: 8px;
+  color: #333;
+  font-family: Ubuntu, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0.54px;
+  text-align: left;
+}
+
+
+
+.bot.with-sidebar {
+  left: 306px;
+  /* width: 73%; */
+
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  margin-top: 17px;
+}
+
+.message-input.no-sidebar {
+  width: 100%;
+}
+
+.message-input textarea {
+  flex: 1;
+  height: 46px;
+  margin: 21px 25px 4px 7px;
+  /* padding: 16px 15.1px 16.1px 20px; */
+  padding: 11px 36.1px 16.1px 20px;
+  border-radius: 6px;
+  border: solid 1px #ccdffe;
+  background-color: #f3f5fc;
+  outline: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  resize: vertical;
+}
+
+.message-input textarea::placeholder {
+  width: 108px;
+  height: 21px;
+  margin: 2px 302px 1.9px 0;
+  font-family: Ubuntu, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  text-align: left;
+  color: #8c8c8c;
+}
+
+.message-input .send-icon {
+  position: absolute;
+  right: 47px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  bottom: 25px;
+}
+
+.message-input .send-icon.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  /* Make disabled icon look different */
+}
+
+.send-icon:not(.disabled):hover {
+  opacity: 0.8;
+  /* Slight hover effect for enabled send icon */
+}
+
+.message-input button:hover {
+  background-color: #0056b3;
+}
+
+.current-time {
+  height: 17px;
+  flex-grow: 0;
+  margin: 0 96px 12px 78px;
+  font-family: Ubuntu, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.45px;
+  color: #666;
+  text-align: center;
+
+}
+
+.current-time.with-sidebar {
+  margin: 0 96px 12px 78px;
+  position: relative;
+  left: 130px;
+}
+
+.send-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+
+.subheader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* Align items to the right */
+  padding: 8px 14px 20px 49px;
+  box-shadow: 4px 4px 25px 0 rgba(218, 218, 218, 0.31);
+  background-color: #fff;
+}
+
+.Select-the-dropdown {
+  font-family: Ubuntu, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: left;
+  color: #202020;
+  margin-right: 10px;
+  /* Add margin to the right of the label */
+}
+
+.dropdown {
+  width: 205px;
+  height: 37px;
+  padding: 9px 19.8px 8px 12px;
+  border-radius: 4px;
+  border: solid 1px #e2e2e2;
+  font-family: Ubuntu, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  color: #444;
+}
+
+
+.title {
+  flex-grow: 0;
+  font-family: Ubuntu, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.66px;
+  text-align: left;
+  color: #fff;
+}
+
+.chat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 40vh;
+  position: relative;
+}
+
+.chat-content.maximized {
+  height: 54vh;
+  /* Height when maximized without sidebar */
+}
+
+/* Adjust height when sidebar is open */
+.chat-content.with-sidebar {
+  height: 82vh;
+  padding-bottom: 78px;
+  padding-top: 25px;
+}
+
+.bot-avatar {
+  width: 28px;
+  height: 28px;
+  flex-grow: 0;
+  margin: 0 12px 0 0;
+  padding: 6px;
+  background-color: #128add;
+  border-radius: 50%;
+}
+
+.user-avatar {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin: 0 12px 0 0;
+
+}
+
+.chat-history {
+
+  font-family: Ubuntu, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-align: right;
+  color: rgba(13, 58, 175, 0.8);
+  top: 6px;
+  position: relative;
+  margin-right: 17px;
+}
+
+.maximise-btn {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-grow: 0;
+}
+
+.close-btn {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-grow: 0;
+
+}
+
+.hover-text {
+  position: absolute;
+  top: 100%;
+  /* Position below the message-icon */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: Ubuntu, sans-serif;
+  display: none;
+  font-style: normal;
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.63px;
+  text-align: center;
+  color: #fff;
+  z-index: 1000;
+  /* Ensure it's above other content */
+  white-space: nowrap;
+  margin-top: 10px;
+  border-radius: 7px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: rgba(51, 51, 51, 0.9);
+  width: 170px;
+  height: 38px;
+
+}
+
+.message-icon:hover .hover-text {
+  display: block;
+}
+
+.message-text {
+  /* flex: 1; */
+  /* margin-left: 10px; */
+  display: inline;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.chat-container {
+  flex: 1;
+  transition: width 0.3s ease;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-container.with-sidebar {
+  width: calc(100% - 300px);
+  /* Adjust width when sidebar is open */
+}
+
+.chat-history {
+  cursor: pointer;
+}
+
+.message-input.with-sidebar {
+  left: 306px;
+  width: 74%;
+
+}
+
+.assistant-heading {
+  width: 615px;
+  height: 161px;
+  margin: 126px 156px 199px 400px;
+  padding: 53px 135px;
+  border-radius: 6px;
+  background-color: rgba(220, 239, 252, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Ubuntu, sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #595959;
+
+}
+
+.editpen {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  right: 54px;
+  top: 54%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-top: 2px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-block;
+}
+
+
+.editpen-container {
+  position: relative;
+  display: flex;
+  border-radius: 50%;
+  padding: 5px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+}
+
+.editpen-container:hover {
+
+  background-color: rgba(187, 187, 187, 0.16);
+  box-shadow: 0 0 10px rgba(187, 187, 187, 0.16);
+}
+
+.editpen {
+  border-radius: 50%;
+  display: block;
+}
+
+/* .message.user:hover .editpen {
+    display: inline;
+  } */
+.edit-buttons {
+  display: flex;
+  justify-content: flex-end;
+  /* Align buttons to the right */
+  gap: 10px;
+  /* Add space between buttons */
+  margin-top: 10px;
+}
+
+.edit-buttons button {
+  padding: 8px 16px;
+  /* Adjust padding as needed */
+  border-radius: 8px;
+  /* Border radius for rounded corners */
+  border: none;
+  /* Remove default border */
+  background-color: #007BFF;
+  /* Adjust background color as needed */
+  color: white;
+  /* Button text color */
+  font-family: Ubuntu, sans-serif;
+  /* Font family */
+  font-size: 14px;
+  /* Font size */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+}
+
+.edit-buttons button:hover {
+  background-color: #0056b3;
+  /* Darker background color on hover */
+}
+
+.edit-buttons button.cancel {
+  background-color: #6c757d;
+  /* Different color for cancel button */
+}
+
+.edit-buttons button.cancel:hover {
+  background-color: #5a6268;
+  /* Darker background color on hover for cancel button */
+}
+
+
+
+/* .response-icons{
+    position: absolute;
+    top: 9rem;
+    left: -10px;
+    margin-top: 14px;
+    padding-top:11px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+   } */
+.icon {
+  display: flex;
+  justify-content: flex-end;
+  /* Align icons to the bottom right */
+  padding: 5px;
+  /* Positioning based on content */
+}
+
+
+.response-icons {
+  position: absolute;
+  /* width: auto; */
+  z-index: 10;
+  display: flex;
+  left: -3px;
+  padding-top: 11px;
+  cursor: pointer;
+  bottom: -45px;
+}
+
+.like-icon {
+  width: 20px;
+  /* Adjust size as needed */
+  height: 20px;
+  cursor: pointer;
+}
+
+.dislike-icon {
+  width: 20px;
+  /* Adjust size as needed */
+  height: 20px;
+  cursor: pointer;
+
+}
+
+.hamburger1 {
+width:25px;
+}
+.reload-icon {
+  width: 20px;
+  /* Adjust size as needed */
+  height: 20px;
+  cursor: pointer;
+
+}
+
+.like-icon,
+.dislike-icon,
+.reload-icon,
+.editpen {
+  cursor: pointer;
+  /* Ensures the cursor changes to a hand pointer */
+  margin-left: 10px;
+}
+
+
+
+/* hhhhh */
+.message-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.message-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.message-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.message-content {
+  flex-grow: 1;
+}
+
+.editpen-container {
+  display: none;
+  position: absolute;
+  /* top: 10px;
+    right: 10px; */
+}
+
+
+
+.message-box:hover .editpen-container,
+.message-box:hover .response-icons {
+  display: flex;
+}
+
+
+.expandIcon {
+  margin-top: 36rem !important;
+}
+
+.collapseIcon {
+  margin-top: 9rem !important;
+}
+
+.message-navigation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 17px;
+  position: absolute;
+  float: right;
+  right: 0px;
+}
+
+.version-navigation-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: black;
+  padding: 0 10px;
+}
+
+.version-navigation-button:disabled {
+  color: #ccc;
+}
+
+.response-navigation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.response-navigation-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: black;
+  padding: 0 10px;
+}
+
+.response-navigation-button-right {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: black;
+  /* padding: 0 10px; */
+  padding: 17px;
+  margin-left: -8px;
+}
+
+.response-navigation-button-right:disabled {
+  color: #ccc;
+}
+
+.response-navigation-button:disabled {
+  color: #ccc;
+}
+
+.icon-group.with-navigation {
+  margin-left: -16px;
+  /* Adjust this value as needed */
+}
+
+
+
+.icon-group {
+  display: flex;
+  align-items: center;
+  /* gap: 5px; */
+  margin-top: 6px;
+}
+
+.margin-top {
+  display: block;
+  /* Ensures it's a block-level element */
+  margin-top: 5px;
+  /* Adds 5px space above */
+}
+
+.bouncing-dots {
+  display: inline-block;
+}
+
+.bouncing-dots span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+  background-color: black;
+  /* Set the dots to black */
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.bouncing-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.bouncing-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  /* Reduced space between buttons */
+  padding: 10px;
+  /* Adjust the container padding as needed */
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  /* Reduced space between the two buttons */
+  width: 100%;
+  justify-content: space-between;
+  /* Ensures the buttons take up equal space */
+}
+
+.chat-button {
+  background-color: white;
+  border: 1px solid #128add;
+  /* Border color */
+  color: #333;
+  padding: 6px 15px;
+  /* Reduced padding for height adjustment */
+  border-radius: 50px;
+  /* Rounded corners */
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  /* Slightly smaller font size */
+  font-weight: normal;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.chat-button.full-width {
+  width: 96%;
+}
+
+.chat-button.half-width {
+  width: 48%;
+  /* 48% to account for the gap between them */
+}
+
+.chat-button:hover {
+  background-color: #128add;
+  color: white;
+}
